@@ -367,7 +367,8 @@ if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelper
 
 __turbopack_esm__({
     "createUrl": ()=>createUrl,
-    "ensureStartsWith": ()=>ensureStartsWith
+    "ensureStartsWith": ()=>ensureStartsWith,
+    "slugify": ()=>slugify
 });
 const createUrl = (pathname, params)=>{
     const paramsString = params.toString();
@@ -375,6 +376,9 @@ const createUrl = (pathname, params)=>{
     return `${pathname}${queryString}`;
 };
 const ensureStartsWith = (stringToCheck, startsWith)=>stringToCheck.startsWith(startsWith) ? stringToCheck : `${startsWith}${stringToCheck}`;
+const slugify = (title)=>{
+    return title.toLowerCase().replace(/\s+/g, '_').replace(/[^\w-]/g, '');
+};
 if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
     __turbopack_refresh__.registerExports(module, globalThis.$RefreshHelpers$);
 }
@@ -821,6 +825,18 @@ const mockProducts = [
         title: 'Product 3',
         price: '19.99',
         imageUrl: 'https://fdn.gsmarena.com/imgroot/reviews/23/vivo-x100-pro/lifestyle/-1024w2/gsmarena_020.jpg'
+    },
+    {
+        id: '4',
+        title: 'Product 4',
+        price: '49.99',
+        imageUrl: 'https://fdn.gsmarena.com/imgroot/reviews/23/vivo-x100-pro/lifestyle/-1024w2/gsmarena_011.jpg'
+    },
+    {
+        id: '5',
+        title: 'Product 5',
+        price: '19.99',
+        imageUrl: 'https://fdn.gsmarena.com/imgroot/reviews/23/vivo-x100-pro/lifestyle/-1024w2/gsmarena_020.jpg'
     }
 ];
 const mockCollections = [
@@ -1115,6 +1131,132 @@ const mockProductFour = [
         handle: 'product-three',
         title: 'Product Three',
         description: 'Description for Product Three.',
+        featuredImage: {
+            url: 'https://images.pexels.com/photos/4210339/pexels-photo-4210339.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+            altText: 'Product Three Image',
+            width: 600,
+            height: 400
+        },
+        images: [
+            {
+                url: 'https://images.pexels.com/photos/4210339/pexels-photo-4210339.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+                altText: 'Product Three Image',
+                width: 600,
+                height: 400
+            },
+            {
+                url: 'https://images.pexels.com/photos/4210339/pexels-photo-4210339.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+                altText: 'Product Three Image',
+                width: 600,
+                height: 400
+            },
+            {
+                url: 'https://images.pexels.com/photos/4210339/pexels-photo-4210339.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+                altText: 'Product Three Image',
+                width: 600,
+                height: 400
+            }
+        ],
+        priceRange: {
+            maxVariantPrice: {
+                amount: '49.99',
+                currencyCode: 'USD'
+            },
+            minVariantPrice: {
+                amount: '39.99',
+                currencyCode: 'USD'
+            }
+        }
+    },
+    {
+        id: '4',
+        handle: 'product-four',
+        title: 'Product four',
+        description: 'Description for Product four.',
+        featuredImage: {
+            url: 'https://images.pexels.com/photos/14569229/pexels-photo-14569229.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+            altText: 'Product One Image',
+            width: 600,
+            height: 400
+        },
+        images: [
+            {
+                url: 'https://images.pexels.com/photos/14569229/pexels-photo-14569229.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+                altText: 'Product One Image',
+                width: 600,
+                height: 400
+            },
+            {
+                url: 'https://images.pexels.com/photos/14569229/pexels-photo-14569229.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+                altText: 'Product One Image',
+                width: 600,
+                height: 400
+            },
+            {
+                url: 'https://images.pexels.com/photos/14569229/pexels-photo-14569229.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+                altText: 'Product One Image',
+                width: 600,
+                height: 400
+            }
+        ],
+        priceRange: {
+            maxVariantPrice: {
+                amount: '29.99',
+                currencyCode: 'USD'
+            },
+            minVariantPrice: {
+                amount: '19.99',
+                currencyCode: 'USD'
+            }
+        }
+    },
+    {
+        id: '5',
+        handle: 'product-5',
+        title: 'Product 5',
+        description: 'Description for Product 5.',
+        featuredImage: {
+            url: 'https://images.pexels.com/photos/1353065/pexels-photo-1353065.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+            altText: 'Product Two Image',
+            width: 600,
+            height: 400
+        },
+        images: [
+            {
+                url: 'https://images.pexels.com/photos/1353065/pexels-photo-1353065.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+                altText: 'Product Two Image',
+                width: 600,
+                height: 400
+            },
+            {
+                url: 'https://images.pexels.com/photos/1353065/pexels-photo-1353065.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+                altText: 'Product Two Image',
+                width: 600,
+                height: 400
+            },
+            {
+                url: 'https://images.pexels.com/photos/1353065/pexels-photo-1353065.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+                altText: 'Product Two Image',
+                width: 600,
+                height: 400
+            }
+        ],
+        priceRange: {
+            maxVariantPrice: {
+                amount: '39.99',
+                currencyCode: 'USD'
+            },
+            minVariantPrice: {
+                amount: '29.99',
+                currencyCode: 'USD'
+            }
+        }
+    },
+    {
+        id: '6',
+        handle: 'product-6',
+        title: 'Product 6',
+        description: 'Description for Product 6.',
         featuredImage: {
             url: 'https://images.pexels.com/photos/4210339/pexels-photo-4210339.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
             altText: 'Product Three Image',

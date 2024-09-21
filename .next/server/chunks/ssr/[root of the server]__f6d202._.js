@@ -350,6 +350,18 @@ const mockProducts = [
         title: 'Product 3',
         price: '19.99',
         imageUrl: 'https://fdn.gsmarena.com/imgroot/reviews/23/vivo-x100-pro/lifestyle/-1024w2/gsmarena_020.jpg'
+    },
+    {
+        id: '4',
+        title: 'Product 4',
+        price: '49.99',
+        imageUrl: 'https://fdn.gsmarena.com/imgroot/reviews/23/vivo-x100-pro/lifestyle/-1024w2/gsmarena_011.jpg'
+    },
+    {
+        id: '5',
+        title: 'Product 5',
+        price: '19.99',
+        imageUrl: 'https://fdn.gsmarena.com/imgroot/reviews/23/vivo-x100-pro/lifestyle/-1024w2/gsmarena_020.jpg'
     }
 ];
 const mockCollections = [
@@ -644,6 +656,132 @@ const mockProductFour = [
         handle: 'product-three',
         title: 'Product Three',
         description: 'Description for Product Three.',
+        featuredImage: {
+            url: 'https://images.pexels.com/photos/4210339/pexels-photo-4210339.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+            altText: 'Product Three Image',
+            width: 600,
+            height: 400
+        },
+        images: [
+            {
+                url: 'https://images.pexels.com/photos/4210339/pexels-photo-4210339.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+                altText: 'Product Three Image',
+                width: 600,
+                height: 400
+            },
+            {
+                url: 'https://images.pexels.com/photos/4210339/pexels-photo-4210339.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+                altText: 'Product Three Image',
+                width: 600,
+                height: 400
+            },
+            {
+                url: 'https://images.pexels.com/photos/4210339/pexels-photo-4210339.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+                altText: 'Product Three Image',
+                width: 600,
+                height: 400
+            }
+        ],
+        priceRange: {
+            maxVariantPrice: {
+                amount: '49.99',
+                currencyCode: 'USD'
+            },
+            minVariantPrice: {
+                amount: '39.99',
+                currencyCode: 'USD'
+            }
+        }
+    },
+    {
+        id: '4',
+        handle: 'product-four',
+        title: 'Product four',
+        description: 'Description for Product four.',
+        featuredImage: {
+            url: 'https://images.pexels.com/photos/14569229/pexels-photo-14569229.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+            altText: 'Product One Image',
+            width: 600,
+            height: 400
+        },
+        images: [
+            {
+                url: 'https://images.pexels.com/photos/14569229/pexels-photo-14569229.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+                altText: 'Product One Image',
+                width: 600,
+                height: 400
+            },
+            {
+                url: 'https://images.pexels.com/photos/14569229/pexels-photo-14569229.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+                altText: 'Product One Image',
+                width: 600,
+                height: 400
+            },
+            {
+                url: 'https://images.pexels.com/photos/14569229/pexels-photo-14569229.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+                altText: 'Product One Image',
+                width: 600,
+                height: 400
+            }
+        ],
+        priceRange: {
+            maxVariantPrice: {
+                amount: '29.99',
+                currencyCode: 'USD'
+            },
+            minVariantPrice: {
+                amount: '19.99',
+                currencyCode: 'USD'
+            }
+        }
+    },
+    {
+        id: '5',
+        handle: 'product-5',
+        title: 'Product 5',
+        description: 'Description for Product 5.',
+        featuredImage: {
+            url: 'https://images.pexels.com/photos/1353065/pexels-photo-1353065.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+            altText: 'Product Two Image',
+            width: 600,
+            height: 400
+        },
+        images: [
+            {
+                url: 'https://images.pexels.com/photos/1353065/pexels-photo-1353065.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+                altText: 'Product Two Image',
+                width: 600,
+                height: 400
+            },
+            {
+                url: 'https://images.pexels.com/photos/1353065/pexels-photo-1353065.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+                altText: 'Product Two Image',
+                width: 600,
+                height: 400
+            },
+            {
+                url: 'https://images.pexels.com/photos/1353065/pexels-photo-1353065.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+                altText: 'Product Two Image',
+                width: 600,
+                height: 400
+            }
+        ],
+        priceRange: {
+            maxVariantPrice: {
+                amount: '39.99',
+                currencyCode: 'USD'
+            },
+            minVariantPrice: {
+                amount: '29.99',
+                currencyCode: 'USD'
+            }
+        }
+    },
+    {
+        id: '6',
+        handle: 'product-6',
+        title: 'Product 6',
+        description: 'Description for Product 6.',
         featuredImage: {
             url: 'https://images.pexels.com/photos/4210339/pexels-photo-4210339.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
             altText: 'Product Three Image',
@@ -1838,29 +1976,29 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist
 var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$grid$2f$index$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/components/grid/index.tsx [app-rsc] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$grid$2f$tile$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/components/grid/tile.tsx [app-rsc] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$link$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/node_modules/next/link.js [app-rsc] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$mock$2d$data$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/mock-data.ts [app-rsc] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$utils$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/lib/utils.ts [app-rsc] (ecmascript)");
 "__TURBOPACK__ecmascript__hoisting__location__";
 ;
 ;
 ;
 ;
 ;
-function ProductGridItems() {
+function ProductGridItems({ products }) {
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["Fragment"], {
-        children: __TURBOPACK__imported__module__$5b$project$5d2f$mock$2d$data$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["mockProductFour"].map((product)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$grid$2f$index$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"].Item, {
+        children: products.map((product)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$grid$2f$index$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"].Item, {
                 className: "animate-fadeIn",
                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$link$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {
                     className: "relative inline-block h-full w-full",
-                    href: `/product/${product.handle}`,
+                    href: `/product/${(0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$utils$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["slugify"])(product.title)}`,
                     prefetch: true,
                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$grid$2f$tile$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["GridTileImage"], {
                         alt: product.title,
                         label: {
                             title: product.title,
-                            amount: product.priceRange?.maxVariantPrice.amount,
-                            currencyCode: product.priceRange?.maxVariantPrice.currencyCode
+                            amount: product.price,
+                            currencyCode: 'USD'
                         },
-                        src: product.featuredImage?.url,
+                        src: product.images,
                         fill: true,
                         sizes: "(min-width: 768px) 33vw, (min-width: 640px) 50vw, 100vw"
                     }, void 0, false, {

@@ -1,1 +1,1 @@
-[{"eventName":"NEXT_CLI_SESSION_STOPPED","payload":{"nextVersion":"15.0.0-canary.113","nodeVersion":"v22.5.1","cliCommand":"dev","durationMilliseconds":8034896,"turboFlag":true,"pagesDir":false,"appDir":true}}]
+[{"eventName":"NEXT_CLI_SESSION_STOPPED","payload":{"nextVersion":"15.0.0-canary.113","nodeVersion":"v22.5.1","cliCommand":"dev","durationMilliseconds":5673637,"turboFlag":true,"pagesDir":false,"appDir":true}}]
