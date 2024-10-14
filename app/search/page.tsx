@@ -5,11 +5,6 @@ import { defaultSort, sorting } from 'lib/constants';
 //remove it
 import { mockProducts } from '../../mock-data';
 
-export const metadata = {
-  title: 'Search',
-  description: 'Search for products in the store.'
-};
-
 export default async function SearchPage({
   searchParams
 }: {

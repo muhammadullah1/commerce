@@ -2,6 +2,9 @@
   "app": {
     "[project]/app/page": [
       "static/media/Geist_Variable-s.p.781b491f.woff2"
+    ],
+    "[project]/app/product/[handle]/page": [
+      "static/media/Geist_Variable-s.p.781b491f.woff2"
     ]
   },
   "appUsingSizeAdjust": true,

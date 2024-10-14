@@ -1,8 +1,9 @@
 import Grid from 'components/grid';
 import { GridTileImage } from 'components/grid/tile';
-import Link from 'next/link';
-import { Product } from 'interfaces/product'
 import { slugify } from 'lib/utils';
+import Link from 'next/link';
+import { Product } from '../../types/product/product.api';
+
 
 interface ProductGridItemsProps {
   products: Product[];
@@ -10,11 +11,11 @@ interface ProductGridItemsProps {
 export default function ProductGridItems({ products }: ProductGridItemsProps) {
   return (
     <>
-      {products.map((product, index) => (
-        <Grid.Item key={product.id} className="animate-fadeIn">
+      {products.map((product) => (
+        <Grid.Item key={product._id} className="animate-fadeIn">
           <Link
             className="relative inline-block h-full w-full"
-            href={`/product/${slugify(product.title)}`}
+            href={`/product/${slugify(product._id)}`}
             prefetch={true}
           >
             <GridTileImage
