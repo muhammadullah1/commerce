@@ -7,3 +7,15 @@ export const getProducts = async () => {
   const response = await fetcher(url);
   return response.json();
 };
+
+export const getProduct = async (id: string) => {
+  const url = `${API_URL}/products/${id}`;
+  const response = await fetcher(url);
+  return response.json();
+};
+
+export const getRelatedProducts = async (id: string) => {
+  const url = `${API_URL}/products/relatedproducts${id}`;
+  const response = await fetcher(url);
+  return response.json();
+};

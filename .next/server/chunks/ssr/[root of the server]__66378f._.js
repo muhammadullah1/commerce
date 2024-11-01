@@ -1602,7 +1602,9 @@ const __TURBOPACK__default__export__ = fetcher;
 "use strict";
 
 __turbopack_esm__({
-    "getProducts": ()=>getProducts
+    "getProduct": ()=>getProduct,
+    "getProducts": ()=>getProducts,
+    "getRelatedProducts": ()=>getRelatedProducts
 });
 var __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$api$2f$fetcher$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/lib/api/fetcher.ts [app-rsc] (ecmascript)");
 "__TURBOPACK__ecmascript__hoisting__location__";
@@ -1610,6 +1612,16 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$api$2f$fetcher$2e$ts_
 const API_URL = 'http://localhost:5000/api';
 const getProducts = async ()=>{
     const url = `${API_URL}/products`;
+    const response = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$api$2f$fetcher$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"])(url);
+    return response.json();
+};
+const getProduct = async (id)=>{
+    const url = `${API_URL}/products/${id}`;
+    const response = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$api$2f$fetcher$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"])(url);
+    return response.json();
+};
+const getRelatedProducts = async (id)=>{
+    const url = `${API_URL}/products/relatedproducts${id}`;
     const response = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$api$2f$fetcher$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"])(url);
     return response.json();
 };

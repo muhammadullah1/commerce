@@ -1,5 +1,5 @@
 'use client';
-
+import type { ProductVariant } from '../../types/product/product'
 import type { Cart, CartItem, Product, ProductVariant } from 'lib/shopify/types';
 import React, { createContext, use, useContext, useMemo, useOptimistic } from 'react';
 

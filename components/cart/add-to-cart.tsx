@@ -6,22 +6,14 @@ import { addItem } from 'components/cart/actions';
 import { useProduct } from 'components/product/product-context';
 import { useFormState } from 'react-dom';
 import { useCart } from './cart-context';
+import { Product } from '../../types/product/product.api';
 
-//remove 
-import { MockProduct, MockProductVariant } from '../../mock-data';
+//remove
+// import { MockProduct, MockProductVariant } from '../../mock-data';
 // import { MockProductSix, MockProductVariantSix, mockProductSix } from '../../mock-data';
 
-
-
-function SubmitButton({
-  availableForSale,
-  selectedVariantId
-}: {
-  availableForSale: boolean;
-  selectedVariantId: string | undefined;
-}) {
-  const buttonClasses =
-    'relative flex w-full items-center justify-center rounded-full bg-blue-600 p-4 tracking-wide text-white';
+function SubmitButton({ availableForSale, selectedVariantId} : { availableForSale: boolean; selectedVariantId: string | undefined}) {
+  const buttonClasses = 'relative flex w-full items-center justify-center rounded-full bg-blue-600 p-4 tracking-wide text-white';
   const disabledClasses = 'cursor-not-allowed opacity-60 hover:opacity-60';
 
   if (!availableForSale) {
@@ -63,29 +55,37 @@ function SubmitButton({
   );
 }
 
-export function AddToCart({ product }: { product: MockProduct }) {
-  // const { variants, availableForSale } = product;
-  const { variants = [], availableForSale } = product || {};
+export function AddToCart({ product }: { product: Product }) {
+  const ProductVariant = {
+    id: product._id,
+     title: product.title,
+      availableForSale: true,
+       price: product.price
+  };
+
+  console.log('------addToCart------', product);
+  // const { variants = [], availableForSale } = product || {};
   const { addCartItem } = useCart();
   const { state } = useProduct();
   const [message, formAction] = useFormState(addItem, null);
 
-  const variant = variants.find((variant: MockProductVariant) =>
-    variant.selectedOptions.every((option) => option.value === state[option.name.toLowerCase()])
-  );
-  const defaultVariantId = variants.length === 1 ? variants[0]?.id : undefined;
-  const selectedVariantId = variant?.id || defaultVariantId;
-  const actionWithVariant = formAction.bind(null, selectedVariantId);
-  const finalVariant = variants.find((variant) => variant.id === selectedVariantId)!;
+  // const variant = variants.find((variant: MockProductVariant) =>
+  //   variant.selectedOptions.every((option) => option.value === state[option.name.toLowerCase()])
+  // );
+  // const defaultVariantId = variants.length === 1 ? variants[0]?.id : undefined;
+  // const selectedVariantId = variant?.id || defaultVariantId;
+  // const actionWithVariant = formAction.bind(null, selectedVariantId);
+  // const finalVariant = variants.find((variant) => variant.id === selectedVariantId)!;
 
   return (
     <form
       action={async () => {
-        addCartItem(finalVariant, product);
-        await actionWithVariant();
+        // addCartItem(finalVariant, product);
+        addCartItem(ProductVariant, product);
+        // await actionWithVariant();
       }}
     >
-      <SubmitButton availableForSale={availableForSale} selectedVariantId={selectedVariantId} />
+      <SubmitButton availableForSale={true} selectedVariantId={product._id} />
       <p aria-live="polite" className="sr-only" role="status">
         {message}
       </p>
